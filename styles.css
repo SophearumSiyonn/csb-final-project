@@ -1,0 +1,51 @@
+/* Background color and font */
+body {
+    background-color: rgb(3, 3, 3);
+    color: whitesmoke;
+    font-family: 'Times New Roman'
+}
+
+/* Sidebar styling */
+.css-1d391kg {  /* Sidebar background */
+    background-color: #f4f4f4 !important;
+}
+.css-1lcbmhc { /* Sidebar text color */
+    color: black !important;
+}
+
+/* App title styling */
+h1 {
+    color: #800020;  /* Burgundy */
+    text-align: center;
+    font-family: 'Times New Roman';
+}
+
+/* Subheader styling */
+h2, h3, h4 {
+    color: #800020;  
+}
+
+/* Recommendation card styling */
+.recommendation-card {
+    background-color: #f8f9fa;  /* Light grey */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #800020;  /* Burgundy */
+    border-radius: 8px;
+    color: black;
+}
+
+/* Table styling */
+.stDataFrame {
+    background-color: white;
+    border: 1px solid #800020;  /* Burgundy */
+    color: black;
+}
+
+/* Footer styling */
+footer {
+    background-color: #f4f4f4;
+    color: black;
+    padding: 10px;
+    text-align: center;
+}
