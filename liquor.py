@@ -47,8 +47,13 @@ st.markdown(
 )
 
 # Age Verification Step
+
+# Check if the user is verified
 if "verified" not in st.session_state:
-    # Show the age verification form if not verified
+    st.session_state.verified = False
+
+# Age verification logic
+if not st.session_state.verified:
     st.subheader("Age Verification")
     age = st.number_input("Please enter your age:", min_value=0, max_value=120, value=21)
 
@@ -56,10 +61,11 @@ if "verified" not in st.session_state:
         if age >= 18:
             st.session_state.verified = True
             st.success("Age verified successfully. You can now browse the site!")
+            st.rerun()  # Refresh to navigate based on the age input
         else:
             st.session_state.verified = False
             st.error("Sorry, you must be at least 18 years old to access this site.")
-        st.rerun()  # Refresh to navigate based on the age input
+            st.stop()  # Stop the rest of the code execution if underage
 else:
     # Initialize session state for cart if it doesn't exist
     if "cart" not in st.session_state:
@@ -148,3 +154,4 @@ else:
     if getattr(st.session_state, "thank_you", False):
         st.write("🎉 Thank you for your purchase! 🥳")
         del st.session_state.thank_you  # Reset the thank you state after showing the message
+
